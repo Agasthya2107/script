@@ -20,5 +20,5 @@ then
     if
 else
     echo "Mysql Already Installed"
-if
+fi
     
