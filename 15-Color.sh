@@ -9,10 +9,10 @@ VALIDATE()
 {
     if [ $1 -ne 0 ]
     then
-        echo -e "$2 not $R installed"
+        echo -e "$R $2 not installed"
         exit 1
     else
-        echo -e "$2 $G Deployed properly"
+        echo -e "$G $2  Deployed properly"
     fi
 }
 
