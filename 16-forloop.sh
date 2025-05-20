@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for i in {1,2,...5}
-do 
+for i in {0..5}
+do
     echo $i
 done
