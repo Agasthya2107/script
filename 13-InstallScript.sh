@@ -37,3 +37,18 @@ then
 else
     echo "GIT already Installed"
 fi
+dnf list installed nmap
+if [ $? -ne 0 ]
+then 
+    echo "User can install NMAP"
+    dnf inall nmap -y
+    if [ $? -ne 0 ]
+    then
+        echo "NMAP not installed"
+        exit 1
+    else
+        echo "NMAP Installed perfectly"
+    fi
+else
+    echo "Software Installed by default"
+fi
