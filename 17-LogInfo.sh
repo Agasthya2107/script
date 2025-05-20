@@ -13,7 +13,7 @@ Log_File_Name="$Log_File_Folder_Name/$Log_File-$TIMESTAMP.log"
 
 VALIDATE()
 {
-    if [ $1 -ne o ]
+    if [ $1 -ne 0 ]
     then
         echo -e "$R instalation failed of $2"
         exit 1
