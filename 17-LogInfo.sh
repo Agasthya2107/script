@@ -8,7 +8,7 @@ Y="\e[33m"
 
 Log_File_Folder_Name="/var/log/shellscript-logs"
 Log_File=$(echo $0 |cut -d "." -f1 )
-TIMESTAMP=$(Date +%Y-%m-%d-%H-%M-%S)
+TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 Log_File_Name="$Log_File_Folder_Name/$Log_File-$TIMESTAMP.log"
 
 VALIDATE()
