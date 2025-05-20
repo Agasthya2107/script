@@ -10,7 +10,7 @@ dnf list installed mysql
 if [ $? -ne 0 ]
 then
     echo "Allowed to install Mysql"
-    dnf install mysqll -y
+    dnf install mysql -y
     if [ $? -ne 0 ]
     then
         echo "Mysql Instalation Failed"
