@@ -30,15 +30,15 @@ CheckROOT()
 }
 echo "Package instalation started at : $TIMESTAMP" &>>Log_File_Name
 CheckROOT
-for package in $@
+for PACKAGE in $@
 do 
     dnf list installed $PACKAGE &>>Log_File_Name
     if [ $? -ne 0 ]
     then
         echo -e "$G Good to install package"
-        dnf install $package -y &>>Log_File_Name
-        VALIDATE $? "Installing $Package"
+        dnf install $PACKAGE -y &>>Log_File_Name
+        VALIDATE $? "Installing $PACKAGE"
     else
-        echo -e "$Y Already $Package avaliable"
+        echo -e "$Y Already $PACKAGE avaliable"
     fi
 done
