@@ -33,7 +33,7 @@ CheckROOT
 for package in $@
 do 
     dnf list installed $PACKAGE &>>Log_File_Name
-    if [ $? -ne 0]
+    if [ $? -ne 0 ]
     then
         echo -e "$G Good to install package"
         dnf install $package -y &>>Log_File_Name
