@@ -19,6 +19,5 @@ then
         echo "Mysql Instalation success"
     if
 else
-    echo "Mysql Already Installed"
+    echo "MySQL is already ... INSTALLED"
 fi
-    
