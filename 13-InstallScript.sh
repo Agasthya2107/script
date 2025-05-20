@@ -21,3 +21,19 @@ then
 else
     echo "MySQL is already ... INSTALLED"
 fi
+dnf list installed git
+
+if [ $? -ne 0]
+then 
+    echo "User Allowed to install GIT"
+    dnf install git -y
+    if [ $? -ne 0 ]
+    then
+       echo "Git Not Installed"
+       exit 1
+    else 
+        echo "Git installed perfectly"
+    fi
+else
+    echo "GIT already Installed"
+fi
