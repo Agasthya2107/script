@@ -23,7 +23,7 @@ else
 fi
 dnf list installed git
 
-if [ $? -ne 0]
+if [ $? -ne 0 ]
 then 
     echo "User Allowed to install GIT"
     dnf install git -y
