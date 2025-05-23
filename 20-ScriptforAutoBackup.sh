@@ -49,7 +49,7 @@ then
     echo "Files are avaliable before 14 Days:- $FILES"
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip" &>>$LOG_FILE_NAME
     echo -e "After Zip the file : $ZIP_FILE"
-    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE" &>>$LOG_FILE_NAME
+    find $SOURCE_DIR -name "*" -mtime +$DAYS | zip -@ "$ZIP_FILE" &>>$LOG_FILE_NAME
     if [ -f "$ZIP_FILE" ]
     then
         echo -e "$G Files sussefully converted to zip: $ZIP_FILE"
@@ -66,4 +66,3 @@ then
 else
     echo "No files found before $ZIP_FILE Days"
 fi
-

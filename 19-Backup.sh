@@ -41,7 +41,7 @@ fi
 
 echo "Execution of this script started at : $IMESTAMP" &>>$LOG_FILE_NAME
 
-FILES=$(find $SOURCE_DIR -name "*" -mtime +$DAYS) &>>$LOG_FILE_NAME
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS) &>>$LOG_FILE_NAME
 
 echo -e "$R information $FILES"
 if [ -n "$FILES" ] 
@@ -49,7 +49,7 @@ then
     echo "Files are avaliable before 14 Days:- $FILES"
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
     #echo "After Zip the file : $ZIP_FILE"
-    find $SOURCE_DIR -name "*" -mtime +$DAYS | zip -@ "$ZIP_FILE"
+    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
     if [ -f "$ZIP_FILE" ]
     then
         echo -e "Successfully created zip file for files older than $DAYS"
