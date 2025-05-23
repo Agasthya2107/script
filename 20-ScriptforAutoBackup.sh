@@ -47,22 +47,22 @@ FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS) &>>$LOG_FILE_NAME
 if [ -n "$FILES" ] 
 then
     echo "Files are avaliable before 14 Days:- $FILES"
-    ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
+    ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip" &>>$LOG_FILE_NAME
     #echo "After Zip the file : $ZIP_FILE"
-    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
+    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE" &>>$LOG_FILE_NAME
     if [ -f "ZIP_FILE" ]
     then
         echo "Files sussefully converted to zip: $ZIP_FILE"
-        while readline -r Filepath
+        while readline -r Filepath &>>$LOG_FILE_NAME
         do 
             echo "Deleting the files from the folder: $Filepath"
-            rm -rf* $Filepath
+            rm -rf* $Filepath &>>$LOG_FILE_NAME
             echo "Files deleted from the path: $Filepath"
-        done <<< $FILES
+        done <<< $FILES &>>$LOG_FILE_NAME
     else
-        echo "Failed to convert files to zip: $ZIP_FILE"
+        echo "Failed to convert files to zip: $ZIP_FILE" &>>$LOG_FILE_NAME
         exit 1
     fi
 else
-    echo "No files found before 14 Days"
+    echo "No files found before 14 Days" &>>$LOG_FILE_NAME
 fi
