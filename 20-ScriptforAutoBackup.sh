@@ -42,7 +42,7 @@ fi
 echo "Execution of this script started at : $IMESTAMP" &>>$LOG_FILE_NAME
 
 #FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS) 
-FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
+FILES=$(find $SOURCE_DIR -name "*" -mtime +$DAYS)
 
 if [ -n "$FILES" ] # true if there are files to zip
 then
