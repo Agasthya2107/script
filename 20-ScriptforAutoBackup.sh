@@ -43,12 +43,11 @@ echo "Execution of this script started at : $IMESTAMP" &>>$LOG_FILE_NAME
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS) &>>$LOG_FILE_NAME
 
-
 if [ -n "$FILES" ] 
 then
     echo "Files are avaliable before 14 Days:- $FILES"
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip" &>>$LOG_FILE_NAME
-    #echo "After Zip the file : $ZIP_FILE"
+    echo "After Zip the file : $ZIP_FILE"
     find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE" &>>$LOG_FILE_NAME
     if [ -f "ZIP_FILE" ]
     then
@@ -57,7 +56,7 @@ then
         do 
             echo "Deleting the files from the folder: $Filepath"
             rm -rf* $Filepath &>>$LOG_FILE_NAME
-            echo "Files deleted from the path: $Filepath"
+            echo -e "$R Files deleted from the $N path: $Filepath"
         done <<< $FILES &>>$LOG_FILE_NAME
     else
         echo "Failed to convert files to zip: $ZIP_FILE" &>>$LOG_FILE_NAME
