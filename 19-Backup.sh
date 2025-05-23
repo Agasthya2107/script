@@ -41,7 +41,7 @@ fi
 
 echo "Execution of this script started at : $IMESTAMP" &>>$LOG_FILE_NAME
 
-FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS) &>>$LOG_FILE_NAME
+FILES=$(find $SOURCE_DIR -name "*" -mtime +$DAYS) &>>$LOG_FILE_NAME
 
 
 if [ -n "$FILES" ] 
