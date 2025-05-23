@@ -63,5 +63,5 @@ then
         exit 1
     fi
 else
-    echo "No files found before 14 Days" &>>$LOG_FILE_NAME
+    echo "No files found before $ZIP_FILE Days" &>>$LOG_FILE_NAME
 fi
