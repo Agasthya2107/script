@@ -41,7 +41,8 @@ fi
 
 echo "Execution of this script started at : $IMESTAMP" &>>$LOG_FILE_NAME
 
-FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS) &>>$LOG_FILE_NAME
+#FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS) 
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
 if [ -n "$FILES" ] # true if there are files to zip
 then
@@ -63,6 +64,6 @@ then
         exit 1
     fi
 else
-    echo "No files found before $ZIP_FILE Days" &>>$LOG_FILE_NAME
+    echo "No files found before $ZIP_FILE Days"
 fi
 
