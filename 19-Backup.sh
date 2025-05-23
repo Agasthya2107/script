@@ -27,4 +27,16 @@ then
     USAGE
 fi
 
+if [ ! -d "$SOURCE_DIR"]
+then
+    echo -e "SOURCE_DIR folder doesn't exit"
+    exit 1
+fi
+
+if [ ! -d "$DEST_DIR"]
+then
+    echo -e "DEST_DIR folder doesn't exit"
+    exit 1
+fi
+
 echo "Execution of this script started at : $IMESTAMP" &>>$LOG_FILE_NAME
