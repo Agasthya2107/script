@@ -51,7 +51,7 @@ then
     find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE" &>>$LOG_FILE_NAME
     if [ -f "$ZIP_FILE" ]
     then
-        echo "Files sussefully converted to zip: $ZIP_FILE"
+        echo -e "$ $G Files sussefully converted to zip: $ZIP_FILE"
         while readline -r Filepath &>>$LOG_FILE_NAME
         do 
             echo -e "Deleting the files from the folder: $Filepath"
