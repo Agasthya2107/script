@@ -48,6 +48,7 @@ if [ -n "$FILES" ]
 then
     echo "Files are avaliable before 14 Days:- $FILES"
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
+    echo "After Zip the file : $ZIP_FILE"
 else
     echo "No files found before 14 Days"
 fi
