@@ -43,7 +43,7 @@ echo "Execution of this script started at : $IMESTAMP" &>>$LOG_FILE_NAME
 
 FILES=$(find $SOURCE_DIR -name "*" -mtime +$DAYS) &>>$LOG_FILE_NAME
 
-
+echo -e "$R information $FILES"
 if [ -n "$FILES" ] 
 then
     echo "Files are avaliable before 14 Days:- $FILES"
