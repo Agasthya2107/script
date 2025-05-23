@@ -52,11 +52,11 @@ then
     if [ -f "$ZIP_FILE" ]
     then
         echo -e "$G Files sussefully converted to zip: $ZIP_FILE"
-        while read -r Filepath &>>$LOG_FILE_NAME
+        while read -r filepath &>>$LOG_FILE_NAME
         do 
-            echo "Deleting the files from the folder: $Filepath"
-            rm  -rf $Filepath &>>$LOG_FILE_NAME
-            echo -e "$R Files deleted from the $N path: $Filepath"
+            echo "Deleting the files from the folder: $filepath"
+            rm  -rf $filepath &>>$LOG_FILE_NAME
+            echo -e "$R Files deleted from the $N path: $filepath"
         done <<< $FILES &>>$LOG_FILE_NAME
     else
         echo "Failed to convert files to zip: $ZIP_FILE" &>>$LOG_FILE_NAME
