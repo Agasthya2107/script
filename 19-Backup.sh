@@ -47,6 +47,7 @@ FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS) &>>$LOG_FILE_NAME
 if [ -n "$FILES" ] 
 then
     echo "Files are avaliable before 14 Days:- $FILES"
+    ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
 else
     echo "No files found before 14 Days"
 fi
